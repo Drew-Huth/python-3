@@ -2,7 +2,7 @@ from ValidationException import ValidationException
 import csv
 
 def validate_file(file_name):
-    with open(file_name) as file_input:
+    with open(f"files/{file_name}") as file_input:
         file_reader = csv.reader(file_input)
         next(file_reader, None)
         for row in file_reader:
@@ -14,7 +14,7 @@ def validate_file(file_name):
 
 def ex1():
     try:
-        validate_file("files/input.txt")
+        validate_file("input.txt")
     except ValidationException as ve:
         print(ve)
 

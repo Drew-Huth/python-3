@@ -5,7 +5,7 @@ def create_files(file_name):
     count = 0
     biglist = []
     lillist = [] 
-    with open(file_name , "r") as file:
+    with open(f"files/{file_name}", "r") as file:
         for line in file:
             new_string = re.sub(r'[^\w\s]', '', line)
             
@@ -29,7 +29,7 @@ def create_files(file_name):
     return count
                 
 def ex3():
-    total_words = create_files("files/words.txt")
+    total_words = create_files("words.txt")
     print(f"Total unique words: {total_words}.")
 
 ex3()
